@@ -149,9 +149,10 @@ class _EasyLocalizationState extends State<EasyLocalization> {
   Widget build(BuildContext context) {
     EasyLocalization.logger.debug('Build');
     if (translationsLoadError != null) {
-      return widget.errorWidget != null
-          ? widget.errorWidget!(translationsLoadError)
-          : ErrorWidget(translationsLoadError!);
+      throw (translationsLoadError);
+      // return widget.errorWidget != null
+      //     ? widget.errorWidget!(translationsLoadError)
+      //     : ErrorWidget(translationsLoadError!);
     }
     return _EasyLocalizationProvider(
       widget,

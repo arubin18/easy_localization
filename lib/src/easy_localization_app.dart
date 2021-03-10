@@ -218,7 +218,8 @@ class _EasyLocalizationState extends State<EasyLocalization> {
                     supportedLocales: widget.supportedLocales),
               );
             } else if (snapshot.hasError) {
-              returnWidget = FutureErrorWidget(msg: snapshot.error);
+              throw (snapshot.error);
+              // returnWidget = FutureErrorWidget(msg: snapshot.error);
             }
             return returnWidget;
           }),
